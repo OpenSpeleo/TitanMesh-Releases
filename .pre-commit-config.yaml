@@ -1,0 +1,23 @@
+repos:
+  # -------------------------
+  # Generic sanity checks
+  # -------------------------
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-case-conflict
+      - id: detect-private-key
+
+  # -------------------------
+  # Markdown formatting
+  # -------------------------
+  - repo: https://github.com/rbubley/mirrors-prettier
+    rev: v3.9.1
+    hooks:
+      - id: prettier
+        name: prettier markdown
+        types_or: [markdown]
+        args: [--prose-wrap=always]
+        # args: [--prose-wrap=always, --embedded-language-formatting=off]
