@@ -1,13 +1,28 @@
 # TitanMesh
 
-This repository hosts public release artifacts for TitanMesh, a commercial
-desktop application for visualizing extremely large 3D datasets - meshes and
-point clouds that may exceed available RAM and GPU memory.
+## License Purchase, Management & Free 48-Hour Trial
 
-**Compatibility:** Windows, macOS, and Linux
+> [!IMPORTANT] 
+> **Purchase or manage your TitanMesh license:**
+> [software.usahinstitute.org](https://software.usahinstitute.org/)
+>
+> **Get a 48-hour TitanMesh trial license:**
+> [software.usahinstitute.org](https://software.usahinstitute.org/)
+
+## What is TitanMesh?
+
+This repository hosts public release artifacts for TitanMesh, a commercial 3D
+viewer for exploring extremely large meshes and point clouds on desktop and in
+virtual reality.
+
+**Desktop compatibility:** Windows, macOS, and Linux
+
+**Virtual reality:** Meta Quest 3/3S support is available as an optional
+licensed experience. See the release notes for the headset models supported by
+each release.
 
 The application source code is private. This repository exists only for
-installer downloads, release notes, and signed auto-update metadata.
+installer downloads, release notes, and files needed to deliver updates.
 
 ## Why TitanMesh
 
@@ -33,34 +48,141 @@ computer. It is a viewer, not a 3D editor or modeler.
 
 Key capabilities:
 
-- Game-style navigation: WASD movement, FPS-style mouse look, middle-mouse
-  orbit, scroll zoom
+- Game-style navigation with free flight, sprint, mouse look, orbit, fast
+  approach to distant models, and instant camera reset
 - Triangle meshes and point clouds, including billion-scale assets
-- Native support for OBJ, STL, PLY, and GLB / glTF 2.0
+- Native support for OBJ, binary STL, binary PLY, and GLB / glTF 2.0
+- Textures, vertex colors, surface shading, point splats, and point-confidence
+  filtering when the source data provides them
+- Adjustable movement speed, detail quality, visual smoothing, model
+  orientation, triangle-face display, point size, and color correction
 - Distance measurement with calibration and metric / imperial units
-- In-app screen recording to MP4 with no external tooling required
-- Minimap overlay with model footprint and camera arrow
+- Persistent landmarks with titles and descriptions
+- Minimap display and transparent map export
+- Clean snapshots, reusable camera locations, and in-app MP4 recording
+- Per-model settings that return automatically when a model is reopened
+- Native VR viewing with tracked-controller navigation and synchronized desktop
+  monitoring
 - Signed automatic updates
 
 TitanMesh is not a modeling tool. There are no editing, sculpting, retopology,
 or simulation features.
 
+## Feature Overview
+
+### Massive datasets
+
+TitanMesh is designed for models that are too large to fit into ordinary system
+or graphics memory. It prepares supported files for responsive exploration,
+keeps the visible scene interactive, and adjusts displayed detail automatically
+as you move. The same large-model experience applies to triangle meshes and
+point clouds.
+
+### Visual quality and model appearance
+
+TitanMesh preserves the appearance information available in supported source
+files, including textures, vertex colors, and surface direction. Point clouds
+are presented as points or smooth surface-like splats according to the available
+data, with adjustable size. Compatible PLY point clouds also offer a
+minimum-confidence control for hiding low-confidence samples.
+
+The Settings panel includes four detail-quality presets, five visual-smoothing
+levels, safe two-sided triangle display or optional back-face removal, and model
+rotation in 90-degree steps. Color Correction provides Temperature, Tint,
+Vibrance, and Saturation controls with live preview. These adjustments affect
+the model without altering the source file.
+
+### Navigation and display
+
+The default free-flight camera feels familiar to anyone who has navigated a 3D
+game. TitanMesh supports mouse look, sprinting, vertical travel, 360-degree
+orbit, a trackpad-friendly orbit gesture, and a one-key return to the initial
+view. When a model begins far from the camera, TitanMesh temporarily increases
+travel speed to reduce the wait. A visual tutorial introduces the controls.
+
+Both borderless fullscreen and resizable windowed presentation are available.
+TitanMesh remembers the display choice and window size.
+
+### Inspection, measurement, and annotation
+
+The minimap shows the model footprint and the camera's position and direction.
+It can be hidden when not needed, follows saved model orientation, and can be
+exported as a transparent PNG.
+
+The measurement tool uses a known reference distance to calibrate a model. After
+calibration, users can place multiple measurement tapes, reposition their
+endpoints, remove individual tapes, clear all tapes, recalibrate, and switch
+between metric and imperial readouts. Calibration returns when the same model is
+reopened.
+
+Right-clicking a model surface creates a persistent landmark with a title and
+description. Landmark cards can be expanded, collapsed, automatically expanded
+when nearby, or deleted.
+
+### Capture and view sharing
+
+TitanMesh can record the application window directly to MP4. It also creates
+clean, watermarked JPEG snapshots of the 3D view without menus or overlays. A
+saved snapshot can later restore its camera view.
+
+For smaller handoffs, Save Location creates a lightweight location file that can
+return TitanMesh to the same view of the same model. Location files and
+compatible snapshots warn before applying a view to a different model.
+
+### Per-model continuity
+
+TitanMesh remembers model-specific choices such as movement speed, quality,
+visual smoothing, orientation, point-cloud display, minimap visibility, landmark
+behavior, measurement units, calibration, color correction, and landmarks.
+Restored choices are applied when the model is reopened. If saved project
+information cannot be used, the model remains viewable with safe defaults.
+
+### Native virtual reality
+
+The optional TitanMesh VR experience brings the active desktop model into an
+immersive stereo view on a supported Meta Quest headset. Guided connection
+screens, QR-assisted setup, a controller tutorial, progress feedback, and clear
+reconnection states help users get from the desktop to the model.
+
+Tracked controllers provide movement, strafing, turning, elevation, a temporary
+speed boost, and a confirmed reset to the starting location. A headset menu
+provides synchronized control over movement speed, detail quality, visual
+smoothing, and point size where applicable, with tactile and audio feedback for
+interactions.
+
+During an active VR session, the desktop mirrors the headset view for monitoring
+and makes it clear that the headset controls the camera. Normal desktop and VR
+preferences for speed, quality, and visual smoothing are stored independently,
+so tuning one experience does not overwrite the other. TitanMesh is designed to
+remain responsive through temporary local-network interruptions, and previously
+received model content can be reused after reconnecting.
+
+VR scene sharing requires the optional VR entitlement, the TitanMesh headset
+app, and a desktop and headset on the same local network. A built-in VR network
+speed test helps evaluate the connection before sharing a model and is available
+without opening a scene. The desktop also provides headset-app download guidance
+and directs users without the VR entitlement to the available trial or purchase
+path.
+
 ## Supported Formats
 
-| Format               | Triangles |   Point clouds    |         Textures         |
-| -------------------- | :-------: | :---------------: | :----------------------: |
-| OBJ                  |    yes    | yes (vertex-only) |      yes (`map_Kd`)      |
-| STL (binary + ASCII) |    yes    |         -         |            -             |
-| PLY (ASCII + binary) |    yes    |        yes        |       optional UVs       |
-| GLB / glTF 2.0       |    yes    |        yes        | yes (`baseColorTexture`) |
+| Format         | Triangle meshes | Point clouds | Appearance support                   |
+| -------------- | :-------------: | :----------: | ------------------------------------ |
+| OBJ            |       yes       |     yes      | Materials and textures when provided |
+| Binary STL     |       yes       |      -       | Surface shading                      |
+| Binary PLY     |       yes       |     yes      | Colors and surface information       |
+| GLB / glTF 2.0 |       yes       |     yes      | Materials and textures when provided |
+
+Text-based STL and PLY files are not supported. Re-export them in binary form
+before opening them in TitanMesh.
 
 ## Downloads
 
 Download the latest installer from the
 [Releases](https://github.com/OpenSpeleo/TitanMesh-Releases/releases) page.
 
-Additional files such as `.sig` files and `latest.json` are used by the signed
-auto-updater. Most users do not need to download them manually.
+Other files on the Releases page support the in-app updater. Most users do not
+need to download them manually.
 
 ## Installation
 
@@ -85,9 +207,8 @@ Recording.
 3. Follow the installer prompts.
 4. Launch TitanMesh from the Start menu.
 
-The MSI uses Windows Installer Restart Manager and is the canonical auto-update
-path. The NSIS installer is provided for administrators who prefer a silent /
-per-user install workflow.
+The MSI is recommended for most users. The NSIS installer is also available for
+administrators and per-user installations.
 
 ### Linux
 
@@ -102,20 +223,27 @@ Choose the package format that best matches your distribution:
 
 TitanMesh launches in borderless fullscreen with FPS-style mouse capture.
 
-| Input                    | Action                                                   |
-| ------------------------ | -------------------------------------------------------- |
-| W A S D                  | Move forward / left / back / right                       |
-| Space / Shift            | Move up / down                                           |
-| Mouse movement           | Look around (FPS-style, always active)                   |
-| Hold middle mouse + drag | Rotate 360 degrees around the object in view             |
-| Scroll wheel             | Zoom forward / backward                                  |
-| Escape                   | Toggle between game mode and UI mode                     |
-| Cmd / Ctrl + O           | Open model file                                          |
-| Cmd / Ctrl + W           | Close current model                                      |
-| Cmd / Ctrl + Q           | Quit                                                     |
-| Cmd / Ctrl + L           | Revoke the current license                               |
-| `[` / `]`                | Decrease / increase point splat size (point clouds only) |
-| Drag-and-drop            | Load a model file                                        |
+| Input                                                  | Action                                                   |
+| ------------------------------------------------------ | -------------------------------------------------------- |
+| W A S D                                                | Move forward / left / back / right                       |
+| Hold Shift                                             | Sprint                                                   |
+| + / -                                                  | Move up / down                                           |
+| Mouse movement                                         | Look around                                              |
+| Hold middle mouse + drag                               | Rotate 360 degrees around the object in view             |
+| Hold Alt (Windows/Linux) or Option (macOS) + drag      | Trackpad-friendly orbit                                  |
+| Space                                                  | Return to the model's initial camera view                |
+| Escape / Enter                                         | Toggle between game mode and UI mode                     |
+| M                                                      | Show / hide the minimap                                  |
+| Right-click a model surface (outside measurement mode) | Create a landmark                                        |
+| Cmd / Ctrl + O                                         | Open model file                                          |
+| Cmd / Ctrl + W                                         | Close current model                                      |
+| Cmd / Ctrl + Q                                         | Quit                                                     |
+| Cmd / Ctrl + L                                         | Revoke the current license                               |
+| `[` / `]`                                              | Decrease / increase point splat size (point clouds only) |
+| Drag-and-drop                                          | Load a model file                                        |
+
+The scroll wheel is intentionally unassigned. Movement speed is adjusted in
+Settings.
 
 ## Measurement Tool
 
@@ -137,13 +265,12 @@ measurements.
 ## Screen Recording
 
 Recording captures the TitanMesh window exactly as shown on screen, including
-the overlay UI and the recording indicator.
+the overlay UI, recording indicator, and elapsed time.
 
 - Start and stop recording from the **Recording** menu in the top bar.
-- Recording is encoded in-process to H.264 inside an MP4 container - no ffmpeg
-  or other external tool is required.
-- When you stop recording, TitanMesh asks where to save the file and finishes
-  muxing in the background.
+- No separate recording application is required.
+- When you stop recording, TitanMesh asks where to save the MP4 and completes
+  the file without interrupting model viewing.
 
 Audio capture is not currently supported.
 
@@ -152,10 +279,11 @@ Audio capture is not currently supported.
 TitanMesh is commercial proprietary software. A valid license is required to use
 the application.
 
-Repeated offline restarts do not extend the offline window. Explicit denial,
-expiry, or revocation immediately wipes local entitlement state and returns the
-app to the license gate. The system also detects clock rollback and forces a
-fresh online validation when tampering is suspected.
+An internet connection is required for activation and periodic license
+validation. Limited offline use is available after a successful validation.
+Expired, revoked, or released licenses return the application to the license
+screen. VR scene sharing requires the optional VR entitlement on the active
+desktop license.
 
 Installer availability in this public repository does not grant a license to
 use, copy, modify, reverse engineer, redistribute, or sublicense TitanMesh. Use
@@ -164,26 +292,11 @@ OpenSpeleo.
 
 ## Auto-Updates
 
-TitanMesh checks this repository for signed update metadata:
-
-```text
-https://github.com/OpenSpeleo/TitanMesh-Releases/releases/latest/download/latest.json
-```
-
-Updates are cryptographically signed. The installed app verifies update
-signatures against an embedded public key before installing them. A failed
-signature aborts the install and surfaces a clear error with `Retry` and
-`Download Latest` actions.
-
-Each platform is updated using the natural mechanism for that OS:
-
-- **macOS**: the running `.app` bundle is replaced from a signed `.app.tar.gz`
-  and the new bundle is launched on next start.
-- **Linux**: the AppImage is replaced atomically over the running file. System
-  package installs (e.g. `/usr/bin/titanmesh`) are skipped and surface a
-  manual-update message.
-- **Windows**: the MSI installs via Windows Installer with Restart Manager; the
-  NSIS installer is also signed and available for admins.
+TitanMesh can check for signed releases from inside the application. Available
+updates are presented with clear install, retry, and manual-download options.
+Update authenticity is checked before installation, and a failed check stops the
+update. Platform-managed installations that cannot be updated in place are
+directed to the latest manual download.
 
 ## Hardware Requirements
 
@@ -191,18 +304,17 @@ Minimum:
 
 - 64-bit Windows 10/11, macOS 12+ (Apple Silicon or Intel), or a recent Linux
   distribution
-- A GPU supporting modern graphics APIs (Metal, Direct3D 12, or Vulkan)
+- A modern supported GPU
 - Multi-core CPU
-- Enough disk space for both the source dataset and its `.tmcache` sidecar
+- Enough disk space for the source dataset and TitanMesh's working data
 
 Recommended:
 
 - A modern discrete GPU
-- An SSD or NVMe drive for the dataset directory (streaming performance scales
-  directly with disk throughput)
+- An SSD or NVMe drive for the dataset directory
 
-TitanMesh degrades gracefully on weaker GPUs by reducing LOD detail rather than
-failing.
+TitanMesh degrades gracefully on weaker GPUs by reducing displayed detail rather
+than failing.
 
 ## Support
 
@@ -228,8 +340,7 @@ It may contain:
 
 - release notes
 - installers
-- updater metadata
-- updater signatures
+- files required by the in-app updater
 
 ## Legal
 
