@@ -1,354 +1,206 @@
 # TitanMesh
 
-## License Purchase, Management & Free 48-Hour Trial
+## Explore large 3D scans. Discover the detail. Share the view.
 
-> [!IMPORTANT] 
-> **Purchase or manage your TitanMesh license:**
-> [software.usahinstitute.org](https://software.usahinstitute.org/)
->
-> **Get a 48-hour TitanMesh trial license:**
-> [software.usahinstitute.org](https://software.usahinstitute.org/)
+![TitanMesh Header](assets/titanmesh-readme-header.png)
 
-## What is TitanMesh?
+TitanMesh turns complex meshes and point clouds into places you can explore.
+Move through a photogrammetry reconstruction, inspect a LiDAR survey, measure a
+feature, or take someone on a recorded tour. Bring your model into focus on
+Windows, macOS, or Linux, then step inside it with optional Meta Quest viewing.
 
-This repository hosts public release artifacts for TitanMesh, a commercial 3D
-viewer for exploring extremely large meshes and point clouds on desktop and in
-virtual reality.
-
-**Desktop compatibility:** Windows, macOS, and Linux
-
-**Virtual reality:** Meta Quest 3/3S support is available as an optional
-licensed experience. See the release notes for the headset models supported by
-each release.
-
-The application source code is private. This repository exists only for
-installer downloads, release notes, and files needed to deliver updates.
+[**Download TitanMesh**](https://github.com/OpenSpeleo/TitanMesh-Releases/releases/latest)
+·
+[**Start a free 48-hour trial**](https://software.usahinstitute.org/free-trial)
+· [**Licenses and pricing**](https://software.usahinstitute.org/pricing)
 
 ## Why TitanMesh
 
-Most 3D viewers were not designed for the scale that modern photogrammetry,
-LiDAR, and large-scale scanning workflows now produce. Files comfortably reach
-tens of millions to billions of triangles or points, often weighing more than
-the host machine's RAM, let alone its GPU memory. Loading such a dataset into a
-general-purpose viewer typically ends in a long wait, an out-of-memory error, or
-a crawl.
-
-TitanMesh is built around a single idea: no matter the size of the model, it
-should just work. The result is a viewer that opens multi-gigabyte files
-quickly, navigates them at interactive frame rates, and behaves more like a
-video game engine than a 3D editor.
-
-The goal is to make exploration of massive 3D scans feel as natural as flying
-through a level in a game.
-
-## What is TitanMesh
-
-TitanMesh helps inspect, navigate, and measure very large 3D models on a desktop
-computer. It is a viewer, not a 3D editor or modeler.
-
-Key capabilities:
-
-- Game-style navigation with free flight, sprint, mouse look, orbit, fast
-  approach to distant models, and instant camera reset
-- Triangle meshes and point clouds, including billion-scale assets
-- Native support for OBJ, binary STL, binary PLY, and GLB / glTF 2.0
-- Textures, vertex colors, surface shading, point splats, and point-confidence
-  filtering when the source data provides them
-- Adjustable movement speed, detail quality, visual smoothing, model
-  orientation, triangle-face display, point size, and color correction
-- Distance measurement with calibration and metric / imperial units
-- Persistent landmarks with titles and descriptions
-- Minimap display and transparent map export
-- Clean snapshots, reusable camera locations, and in-app MP4 recording
-- Per-model settings that return automatically when a model is reopened
-- Native VR viewing with tracked-controller navigation and synchronized desktop
-  monitoring
-- Signed automatic updates
-
-TitanMesh is not a modeling tool. There are no editing, sculpting, retopology,
-or simulation features.
-
-## Feature Overview
-
-### Massive datasets
-
-TitanMesh is designed for models that are too large to fit into ordinary system
-or graphics memory. It prepares supported files for responsive exploration,
-keeps the visible scene interactive, and adjusts displayed detail automatically
-as you move. The same large-model experience applies to triangle meshes and
-point clouds.
-
-### Visual quality and model appearance
-
-TitanMesh preserves the appearance information available in supported source
-files, including textures, vertex colors, and surface direction. Point clouds
-are presented as points or smooth surface-like splats according to the available
-data, with adjustable size. Compatible PLY point clouds also offer a
-minimum-confidence control for hiding low-confidence samples.
-
-The Settings panel includes four detail-quality presets, five visual-smoothing
-levels, safe two-sided triangle display or optional back-face removal, and model
-rotation in 90-degree steps. Color Correction provides Temperature, Tint,
-Vibrance, and Saturation controls with live preview. These adjustments affect
-the model without altering the source file.
-
-### Navigation and display
-
-The default free-flight camera feels familiar to anyone who has navigated a 3D
-game. TitanMesh supports mouse look, sprinting, vertical travel, 360-degree
-orbit, a trackpad-friendly orbit gesture, and a one-key return to the initial
-view. When a model begins far from the camera, TitanMesh temporarily increases
-travel speed to reduce the wait. A visual tutorial introduces the controls.
-
-Both borderless fullscreen and resizable windowed presentation are available.
-TitanMesh remembers the display choice and window size.
-
-### Inspection, measurement, and annotation
-
-The minimap shows the model footprint and the camera's position and direction.
-It can be hidden when not needed, follows saved model orientation, and can be
-exported as a transparent PNG.
-
-The measurement tool uses a known reference distance to calibrate a model. After
-calibration, users can place multiple measurement tapes, reposition their
-endpoints, remove individual tapes, clear all tapes, recalibrate, and switch
-between metric and imperial readouts. Calibration returns when the same model is
-reopened.
-
-Right-clicking a model surface creates a persistent landmark with a title and
-description. Landmark cards can be expanded, collapsed, automatically expanded
-when nearby, or deleted.
-
-### Capture and view sharing
-
-TitanMesh can record the application window directly to MP4. It also creates
-clean, watermarked JPEG snapshots of the 3D view without menus or overlays. A
-saved snapshot can later restore its camera view.
-
-For smaller handoffs, Save Location creates a lightweight location file that can
-return TitanMesh to the same view of the same model. Location files and
-compatible snapshots warn before applying a view to a different model.
-
-### Per-model continuity
-
-TitanMesh remembers model-specific choices such as movement speed, quality,
-visual smoothing, orientation, point-cloud display, minimap visibility, landmark
-behavior, measurement units, calibration, color correction, and landmarks.
-Restored choices are applied when the model is reopened. If saved project
-information cannot be used, the model remains viewable with safe defaults.
-
-### Native virtual reality
-
-The optional TitanMesh VR experience brings the active desktop model into an
-immersive stereo view on a supported Meta Quest headset. Guided connection
-screens, QR-assisted setup, a controller tutorial, progress feedback, and clear
-reconnection states help users get from the desktop to the model.
-
-Tracked controllers provide movement, strafing, turning, elevation, a temporary
-speed boost, and a confirmed reset to the starting location. A headset menu
-provides synchronized control over movement speed, detail quality, visual
-smoothing, and point size where applicable, with tactile and audio feedback for
-interactions.
-
-During an active VR session, the desktop mirrors the headset view for monitoring
-and makes it clear that the headset controls the camera. Normal desktop and VR
-preferences for speed, quality, and visual smoothing are stored independently,
-so tuning one experience does not overwrite the other. TitanMesh is designed to
-remain responsive through temporary local-network interruptions, and previously
-received model content can be reused after reconnecting.
-
-VR scene sharing requires the optional VR entitlement, the TitanMesh headset
-app, and a desktop and headset on the same local network. A built-in VR network
-speed test helps evaluate the connection before sharing a model and is available
-without opening a scene. The desktop also provides headset-app download guidance
-and directs users without the VR entitlement to the available trial or purchase
-path.
-
-## Supported Formats
-
-| Format         | Triangle meshes | Point clouds | Appearance support                   |
-| -------------- | :-------------: | :----------: | ------------------------------------ |
-| OBJ            |       yes       |     yes      | Materials and textures when provided |
-| Binary STL     |       yes       |      -       | Surface shading                      |
-| Binary PLY     |       yes       |     yes      | Colors and surface information       |
-| GLB / glTF 2.0 |       yes       |     yes      | Materials and textures when provided |
-
-Text-based STL and PLY files are not supported. Re-export them in binary form
-before opening them in TitanMesh.
-
-## Downloads
-
-Download the latest installer from the
-[Releases](https://github.com/OpenSpeleo/TitanMesh-Releases/releases) page.
-
-Other files on the Releases page support the in-app updater. Most users do not
-need to download them manually.
-
-## Installation
-
-### macOS
-
-1. Download the `.dmg` for your Mac (universal: Apple Silicon and Intel).
-2. Open the disk image.
-3. Drag TitanMesh into Applications.
-4. Launch TitanMesh.
-
-If macOS blocks the first launch, open System Settings > Privacy & Security and
-allow TitanMesh to run.
-
-The first time you start a screen recording, macOS will request screen-capture
-permission. Grant it under System Settings > Privacy & Security > Screen
-Recording.
-
-### Windows
-
-1. Download the Windows installer.
-2. Run the `.msi` (recommended) or the NSIS `setup.exe`.
-3. Follow the installer prompts.
-4. Launch TitanMesh from the Start menu.
-
-The MSI is recommended for most users. The NSIS installer is also available for
-administrators and per-user installations.
-
-### Linux
-
-Choose the package format that best matches your distribution:
-
-- Use `.AppImage` for a portable build that works across most distributions.
-- Use `.tar.gz` for a manual extraction if you prefer not to use AppImage.
-
-`.deb` and `.rpm` packages are not currently provided.
-
-## Controls
-
-TitanMesh launches in borderless fullscreen with FPS-style mouse capture.
-
-| Input                                                  | Action                                                   |
-| ------------------------------------------------------ | -------------------------------------------------------- |
-| W A S D                                                | Move forward / left / back / right                       |
-| Hold Shift                                             | Sprint                                                   |
-| + / -                                                  | Move up / down                                           |
-| Mouse movement                                         | Look around                                              |
-| Hold middle mouse + drag                               | Rotate 360 degrees around the object in view             |
-| Hold Alt (Windows/Linux) or Option (macOS) + drag      | Trackpad-friendly orbit                                  |
-| Space                                                  | Return to the model's initial camera view                |
-| Escape / Enter                                         | Toggle between game mode and UI mode                     |
-| M                                                      | Show / hide the minimap                                  |
-| Right-click a model surface (outside measurement mode) | Create a landmark                                        |
-| Cmd / Ctrl + O                                         | Open model file                                          |
-| Cmd / Ctrl + W                                         | Close current model                                      |
-| Cmd / Ctrl + Q                                         | Quit                                                     |
-| Cmd / Ctrl + L                                         | Revoke the current license                               |
-| `[` / `]`                                              | Decrease / increase point splat size (point clouds only) |
-| Drag-and-drop                                          | Load a model file                                        |
-
-The scroll wheel is intentionally unassigned. Movement speed is adjusted in
-Settings.
-
-## Measurement Tool
-
-TitanMesh includes a calibrated multi-tape distance measurement tool for
-real-world readouts on model surfaces.
-
-1. Open **Science > Measure** from the top-bar menu.
-2. Calibrate once by clicking two points along a known reference distance and
-   entering its real-world value (cm or inches).
-3. After calibration, every two clicks place a new measurement tape with a live
-   distance label.
-4. Existing endpoints can be repositioned by press-and-hold drag.
-5. Switch between metric (cm / m) and imperial (in / ft) at any time from the
-   Settings panel.
-
-Calibration tapes can be re-placed at any time without losing existing
-measurements.
-
-## Screen Recording
-
-Recording captures the TitanMesh window exactly as shown on screen, including
-the overlay UI, recording indicator, and elapsed time.
-
-- Start and stop recording from the **Recording** menu in the top bar.
-- No separate recording application is required.
-- When you stop recording, TitanMesh asks where to save the MP4 and completes
-  the file without interrupting model viewing.
-
-Audio capture is not currently supported.
-
-## Licensing
-
-TitanMesh is commercial proprietary software. A valid license is required to use
-the application.
-
-An internet connection is required for activation and periodic license
-validation. Limited offline use is available after a successful validation.
-Expired, revoked, or released licenses return the application to the license
-screen. VR scene sharing requires the optional VR entitlement on the active
-desktop license.
-
-Installer availability in this public repository does not grant a license to
-use, copy, modify, reverse engineer, redistribute, or sublicense TitanMesh. Use
-of TitanMesh is governed by the commercial license agreement or EULA provided by
-OpenSpeleo.
-
-## Auto-Updates
-
-TitanMesh can check for signed releases from inside the application. Available
-updates are presented with clear install, retry, and manual-download options.
-Update authenticity is checked before installation, and a failed check stops the
-update. Platform-managed installations that cannot be updated in place are
-directed to the latest manual download.
-
-## Hardware Requirements
-
-Minimum:
-
-- 64-bit Windows 10/11, macOS 12+ (Apple Silicon or Intel), or a recent Linux
-  distribution
-- A modern supported GPU
-- Multi-core CPU
-- Enough disk space for the source dataset and TitanMesh's working data
-
-Recommended:
-
-- A modern discrete GPU
-- An SSD or NVMe drive for the dataset directory
-
-TitanMesh degrades gracefully on weaker GPUs by reducing displayed detail rather
-than failing.
-
-## Support
-
-For license, installation, or product support, contact OpenSpeleo through the
-support channel provided with your purchase or license.
-
-When reporting a problem, include:
-
-- TitanMesh version (visible in the top bar)
-- operating system and version
-- installer type used (DMG, MSI, NSIS exe, AppImage, tar.gz)
-- the file format and approximate size of the dataset, if relevant
-- a brief description of what you expected and what happened
-
-Do not post license keys, private datasets, or other sensitive data in public
-issues.
-
-## Repository Purpose
-
-This repository is intentionally limited to release distribution.
-
-It may contain:
-
-- release notes
-- installers
-- files required by the in-app updater
-
-## Legal
-
-TitanMesh is proprietary commercial software.
-
-Installer availability in this repository does not grant a license to use, copy,
-modify, redistribute, reverse engineer, or sublicense TitanMesh except as
-expressly allowed by a written commercial license agreement.
-
-Third-party components bundled with TitanMesh remain subject to their respective
-licenses.
+Modern photogrammetry, LiDAR, and large-scale scanning can produce tens of
+millions to billions of triangles or points. These datasets can exceed a
+computer's RAM, let alone its graphics memory. At that scale, long loading
+times, memory limits, and sluggish navigation can turn a valuable scan into
+something difficult to explore.
+
+TitanMesh is built for that challenge. Its focus is making large 3D datasets
+practical to navigate and inspect, including meshes and point clouds larger than
+your computer's system or graphics memory. Multi-gigabyte models become spaces
+you can move through: fly across the scene, approach a feature, orbit it, and
+stop to investigate. Familiar game-style controls put the exploration in your
+hands.
+
+That focus shapes the whole experience. Navigation, calibrated measurements,
+landmarks, recorded tours, and optional VR help you move from seeing a model to
+understanding the place it represents.
+
+**The goal is simple: make exploring a massive 3D scan feel as natural as flying
+through a level in a game.**
+
+## See more of your 3D data
+
+A scan captures a place. TitanMesh helps you explore it, understand it, and show
+others what matters.
+
+- **Explore at scale.** Open large meshes and point clouds, including datasets
+  that exceed your computer's system or graphics memory.
+- **Move naturally.** Fly through a scene, orbit a detail, change your pace, and
+  return to the starting view with familiar game-style controls.
+- **Inspect with purpose.** Calibrate distances, place measurements, and mark
+  important locations with named landmarks and notes.
+- **Present your perspective.** Record a camera route, replay a tour, save a
+  clean snapshot, or capture the application to MP4.
+- **Step inside the model.** Explore on Meta Quest 3 or Quest 3S while someone
+  follows your viewpoint on the desktop.
+
+TitanMesh is built for viewing large 3D datasets. Model size, complexity,
+hardware, and display settings affect preparation time and performance.
+
+## Explore with confidence
+
+Move from a view of the whole model to a closer look at the details. Free-flight
+navigation, mouse look, a movement boost, and adjustable speed let you set the
+pace. Orbit controls work with a mouse or trackpad, and a minimap helps you keep
+track of your position and direction.
+
+A playable tutorial introduces the controls. Downloadable demo models give you a
+place to start before opening your own scans. Choose fullscreen for an immersive
+desktop view or a resizable window for working alongside other tools.
+
+## Make the details easier to read
+
+View textured meshes, vertex colors, and shaded surfaces where supported by the
+source file. Adjust point size to make point-cloud structure easier to inspect.
+For compatible PLY files, confidence filtering helps you hide samples below your
+chosen confidence level.
+
+Tune detail quality, edge smoothing, model orientation, and triangle-face
+visibility to suit the scene. Temperature, Tint, Vibrance, and Saturation
+controls let you refine its appearance with live feedback. These viewing
+adjustments leave your source model unchanged.
+
+## Measure, mark, and return
+
+Desktop's **Scientific Mode** brings practical inspection tools into the model.
+Calibrate against a known distance, place measurement endpoints on surfaces, and
+read distances in metric or imperial units. Adjust an endpoint, revise the
+calibration, or remove an individual measurement as your inspection develops.
+
+Add landmarks with titles and descriptions to identify features, observations,
+and places worth revisiting. Measurement annotations and landmarks remain
+visible through model surfaces, helping you keep important references in view.
+
+Saved calibration, measurements, landmarks, and model preferences let you pick
+up an inspection when you reopen the same model. You can also export the minimap
+as a transparent PNG for use in a report or presentation.
+
+## Turn exploration into a tour
+
+**Flight Recorder and Flight Replay** let you capture a camera route and return
+to it. Record a path through the model, save it, and replay it once or on a
+loop. Adjust the travel speed to suit a close inspection or a broader
+presentation.
+
+Replay works on Desktop and in VR. In a headset, the route guides your movement
+while you remain free to look around. Use the same route to introduce a site,
+revisit a feature, or guide someone through a complex scene.
+
+## Capture what matters
+
+Use **Capture** for snapshots and video, and **File** for saved locations.
+Choose the format that suits your next conversation or presentation:
+
+- **Snapshots:** save a clean, watermarked JPEG of the model view, without menus
+  or inspection overlays. A TitanMesh snapshot can also restore its saved
+  viewpoint when the corresponding model is open.
+- **Saved locations:** share a lightweight viewpoint file with someone who has
+  the same model, or return to that view yourself.
+- **MP4 recording:** record the TitanMesh window, including visible annotations
+  and interface elements. Capture a live exploration or a replayed flight
+  without a separate recording application. Video recording does not include
+  audio.
+
+## Experience your model in VR
+
+Explore on **Meta Quest 3 and Quest 3S** with tracked controllers, guided setup,
+and a QR connection to your computer. Move, turn, change elevation, orbit a
+feature, and confirm a return to the starting location from inside the scene.
+
+The headset menu gives you control over movement speed, detail quality, visual
+smoothing, and point size where applicable. Desktop and VR retain independent
+speed, quality, and smoothing preferences, so you can tune each experience to
+its user.
+
+The desktop follows the headset's viewpoint during a session, making it easy for
+a colleague to follow along. A built-in network speed test helps you check the
+local connection before opening a model in VR.
+
+VR viewing requires the TitanMesh headset app, optional VR access on your active
+Desktop license, and a computer and headset on the same local network. Setup and
+headset-app download guidance are available from TitanMesh's **VR** menu.
+Measurement and landmark tools are Desktop features.
+
+## Bring your existing models
+
+| Format     | Meshes | Point clouds | Appearance                                            |
+| ---------- | :----: | :----------: | ----------------------------------------------------- |
+| OBJ        |  Yes   |     Yes      | Vertex colors, materials, and textures when available |
+| Binary STL |  Yes   |      —       | Surface shading                                       |
+| Binary PLY |  Yes   |     Yes      | Vertex colors and supported surface information       |
+| GLB / glTF |  Yes   |     Yes      | Vertex colors, materials, and textures when available |
+
+STL and PLY files must use a supported binary encoding. Convert text-based STL
+or PLY files to binary before opening them. Appearance support depends on the
+format and the information present in the source file.
+
+## Get started
+
+1. **Download and install TitanMesh** for your platform.
+2. **Activate a license or start a 48-hour trial.** Follow the navigation
+   tutorial to get familiar with the controls.
+3. **Open a demo or your own model.** Use **File > Open Model**, the open-file
+   shortcut, or drag and drop a supported model into the application.
+
+### Choose your installer
+
+| Platform    | Download                                          | Installation                                                                                |
+| ----------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| macOS       | Universal `.dmg` for Apple Silicon and Intel Macs | Open the disk image and drag TitanMesh into Applications.                                   |
+| Windows x64 | `setup.exe` or `.msi`                             | Run the installer and follow the prompts.                                                   |
+| Linux x64   | `.AppImage` or `.tar.gz`                          | Make the AppImage executable and launch it, or extract the archive for manual installation. |
+
+Find installers and release notes on the
+[Releases page](https://github.com/OpenSpeleo/TitanMesh-Releases/releases).
+TitanMesh also checks for signed updates inside the application.
+
+Use compatible graphics hardware and current drivers. An SSD and sufficient free
+disk space for your models and working files are recommended. The trial lets you
+evaluate TitanMesh with your own datasets and computer before choosing a
+license. On macOS, window recording requires the operating system's
+screen-recording permission.
+
+## Licensing and support
+
+TitanMesh is commercial software. Visit the
+[licensing portal](https://software.usahinstitute.org/) to manage your license,
+explore pricing, or request a free 48-hour trial. VR viewing requires optional
+VR access in addition to the Desktop license and headset app.
+
+Internet access is required for activation and periodic license validation.
+Limited offline use is available after successful validation.
+
+For product or installation support, use the support channel supplied with your
+purchase or license. Include your TitanMesh version, operating system, and a
+short description of the issue. Keep license keys and private datasets out of
+public issue reports.
+
+**Ready to explore your scans?**
+[Download TitanMesh](https://github.com/OpenSpeleo/TitanMesh-Releases/releases/latest)
+and [start your trial](https://software.usahinstitute.org/free-trial).
+
+---
+
+This public repository distributes TitanMesh installers, release notes, and
+update files. TitanMesh is proprietary software; its source code is private.
+Downloading an installer does not grant a license. Use is governed by the
+applicable commercial license agreement. Bundled third-party components remain
+subject to their respective licenses.
